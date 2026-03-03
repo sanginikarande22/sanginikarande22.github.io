@@ -15,7 +15,7 @@ window.onclick = function(event) {
     }
 }
 
-/* Typing Effect (Crash-Proof Version) */
+/* Typing Effect (Fixed Infinite Loop) */
 const typedText = ["Full Stack Developer", "Problem Solver", "Tech Enthusiast"];
 let textIdx = 0;
 let charIdx = 0;
@@ -25,42 +25,36 @@ const typingElement = document.querySelector('.typing');
 function typeEffect() {
     if (!typingElement) return;
 
-    const currentWord = typedText[textIdx];
+    let currentString = typedText[textIdx];
 
     if (isDeleting) {
-        typingElement.textContent = currentWord.substring(0, charIdx - 1);
+        typingElement.textContent = currentString.substring(0, charIdx - 1);
         charIdx--;
     } else {
-        typingElement.textContent = currentWord.substring(0, charIdx + 1);
+        typingElement.textContent = currentString.substring(0, charIdx + 1);
         charIdx++;
     }
 
     let typeSpeed = isDeleting ? 50 : 100;
 
     // Pause at the end of a word
-    if (!isDeleting && charIdx === currentWord.length) {
-        typeSpeed = 2000; // Wait 2 seconds before deleting
+    if (!isDeleting && charIdx === currentString.length) {
+        typeSpeed = 1500;
         isDeleting = true;
     } 
-    // Move to next word when fully deleted
+    // Move to next word when deleted
     else if (isDeleting && charIdx === 0) {
         isDeleting = false;
-        textIdx++;
-        if (textIdx >= typedText.length) {
-            textIdx = 0; // Reset back to the first word
-        }
-        typeSpeed = 500; // Wait half a second before typing again
+        textIdx = (textIdx + 1) % typedText.length;
+        typeSpeed = 500;
     }
 
     setTimeout(typeEffect, typeSpeed);
 }
 
-// Start the typing effect once the page loads
+// Start typing effect when page loads
 document.addEventListener("DOMContentLoaded", () => {
-    if(typingElement) {
-        typingElement.textContent = "";
-        setTimeout(typeEffect, 1000);
-    }
+    if(typingElement) typeEffect();
 });
 
 /* AI Response Mock */
@@ -70,7 +64,7 @@ function askSanginiAI() {
     if (q === "") { 
         res.innerHTML = "<span style='color: #e74c3c;'>Please type a question.</span>"; 
     } else { 
-        res.innerHTML = "🤖 <strong>AI Response:</strong> Sangini has excellent knowledge in Core Java, SQL, and Full Stack development."; 
+        res.innerHTML = "🤖 <strong>AI Response:</strong> Sangini has excellent knowledge in Core Java, SQL, and Full Stack development. She is a quick learner and a great problem solver!"; 
     }
 }
 
