@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sangini Karande | Full Stack Developer</title>
     
-    <!-- Google Fonts -->
+    <link rel="icon" href="sangini-logo.png" type="image/png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-             <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <a href="#home" class="logo">Sangini<span>.</span></a>
+            <a href="#home" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="sangini-logo.png" alt="Sangini Logo" style="height: 40px; width: 40px; object-fit: contain;">
+                Sangini<span>.</span>
+            </a>
+            
             <ul class="nav-links">
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
@@ -30,7 +32,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home">
         <div class="hero-left">
             <h3>Hello, Welcome to my space!</h3>
@@ -44,19 +45,17 @@
         </div>
         <div class="hero-right">
             <div class="hero-img-box">
-                <img src="" alt="Sangini Karande" onerror="this.src='https://via.placeholder.com/350x350?text=Sangini'">
+                <img src="photo.jpeg" alt="Sangini Karande" onerror="this.src='https://via.placeholder.com/350x350?text=Sangini'">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-img-container">
-                
                 <div class="csr-badge">
-                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> Aspiring SDE
                 </div>
             </div>
             <div class="about-text">
@@ -65,7 +64,6 @@
                 <p>Currently learning Full Stack Development at Kiran Academy. Skills include Core Java, SQL, JDBC, OOP, React, Hibernate.</p>
                 <p>I enjoy problem-solving, writing clean, maintainable code, and building real-world applications that make a difference.</p>
 
-                <!-- AI Assistant -->
                 <div class="ai-card">
                     <h4><i class="fas fa-robot"></i> ✨ AI Resume Assistant</h4>
                     <p>Recruiters: Ask my AI agent any specific questions about my technical background!</p>
@@ -78,30 +76,7 @@
             </div>
         </div>
     </section>
-  <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-  <h2>Technical Skills</h2>
-  <div class="skills-container">
-    <div class="skill-box">
-      <h3>Languages & Core</h3>
-      <p>Core Java, HTML, CSS, JavaScript</p>
-    </div>
-    <div class="skill-box">
-      <h3>Problem Solving</h3>
-      <p>Data Structures & Algorithms</p>
-    </div>
-    <div class="skill-box">
-      <h3>Development</h3>
-      <p>Full Stack Development, Java Servlets</p>
-    </div>
-    <div class="skill-box">
-      <h3>Databases & Tools</h3>
-      <p>MySQL, CRUD Operations, Git & GitHub</p>
-    </div>
-  </div>
-</section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <h2 class="section-title">Core Skills</h2>
         <div class="skills-grid">
@@ -111,12 +86,11 @@
             <div class="skill-card"><i class="fas fa-cubes"></i><h4>OOP Concepts</h4></div>
             <div class="skill-card"><i class="fas fa-brain"></i><h4>Problem Solving</h4></div>
             <div class="skill-card"><i class="fas fa-comments"></i><h4>Communication</h4></div>
-            <div class="skill-card"><i class="fas fa-bolt"></i><h4>Confidence</h4></div>
-            <div class="skill-card"><i class="fas fa-briefcase"></i><h4>Hardworking</h4></div>
+            <div class="skill-card"><i class="fas fa-code"></i><h4>Full Stack Dev</h4></div>
+            <div class="skill-card"><i class="fab fa-git-alt"></i><h4>Git & GitHub</h4></div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education">
         <h2 class="section-title">Education</h2>
         <div class="timeline">
@@ -139,7 +113,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
@@ -152,7 +125,7 @@
                 </div>
             </div>
             <div class="project-card" onclick="openModal('project2-modal')">
-                <div class="project-img" style="background: var(--secondary); color: var(--primary);"><i class="fas fa-gas-pump"></i></div>
+                <div class="project-img" style="background: linear-gradient(135deg, var(--secondary), #5aa835);"><i class="fas fa-gas-pump"></i></div>
                 <div class="project-info">
                     <h3>Petrol Pump Management</h3>
                     <p>Android app developed during internship at Avirat Infotech to track sales and expenses.</p>
@@ -162,13 +135,12 @@
         </div>
     </section>
 
-    <!-- Modals -->
     <div id="project1-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('project1-modal')">&times;</span>
             <h2>Smart Irrigation System</h2>
             <div class="tag-container"><span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Android App</span></div>
-            <p>This system enables remote watering via an Android app, reducing water wastage.</p>
+            <p>This system enables remote watering via an Android app, reducing water wastage by monitoring soil moisture levels in real-time.</p>
             <a href="https://github.com/sanginikarande22" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View on Github</a>
         </div>
     </div>
@@ -178,12 +150,11 @@
             <span class="close-btn" onclick="closeModal('project2-modal')">&times;</span>
             <h2>Petrol Pump Management App</h2>
             <div class="tag-container"><span class="tag">Android Studio</span><span class="tag">Java</span><span class="tag">SQLite</span></div>
-            <p>App tracks sales, purchases, expenses, and employee records with efficient database design.</p>
+            <p>App tracks sales, purchases, expenses, and employee records with efficient database design to help pump owners manage their daily operations.</p>
             <a href="https://github.com/sanginikarande22" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View on Github</a>
         </div>
     </div>
 
-    <!-- Achievements Section -->
     <section id="achievements">
         <h2 class="section-title">Achievements & Certificates</h2>
         <div class="achievements-gallery">
@@ -198,7 +169,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-container">
@@ -209,10 +179,6 @@
                 <div class="info-item"><i class="fas fa-phone-alt"></i><div><h4>Phone</h4><p><a href="tel:+919356298482">+91 9356298482</a></p></div></div>
                 <div class="info-item"><i class="fab fa-github"></i><div><h4>GitHub</h4><p><a href="https://github.com/sanginikarande22" target="_blank">sanginikarande22</a></p></div></div>
                 <div class="info-item"><i class="fab fa-linkedin-in"></i><div><h4>LinkedIn</h4><p><a href="https://linkedin.com/in/sangini-karande-72aa1b2a1" target="_blank">Sangini Karande</a></p></div></div>
-                <div class="contact-buttons">
-                    <a href="mailto:sanginikarande@gmail.com" class="btn btn-primary">Send Email</a>
-                    <a href="Sangini_Resume.pdf" download class="btn btn-outline">Download Resume</a>
-                </div>
             </div>
 
             <div class="contact-form-box">
@@ -220,7 +186,7 @@
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
                     <div class="textarea-container">
-                        <textarea id="contact-message" placeholder="Type a few words (e.g., 'hire you for dev role')" rows="5" required></textarea>
+                        <textarea id="contact-message" placeholder="Type a few words..." rows="5" required></textarea>
                         <button type="button" id="ai-draft-btn" class="ai-draft-btn" onclick="draftMessageAI()">✨ AI Draft</button>
                     </div>
                     <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
@@ -229,7 +195,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2026 Sangini Karande | Designed with ❤️</p>
         <div class="footer-social">
@@ -238,9 +203,6 @@
         </div>
     </footer>
 
-    <!-- JS File -->
     <script src="script.js"></script>
 </body>
-
 </html>
-
