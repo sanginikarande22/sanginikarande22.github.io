@@ -11,18 +11,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 25px; margin-top: 30px; }
+        .service-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; border: 1px solid #eee; }
+        .service-box:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: var(--primary); }
+        .service-box i { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
+        .service-box h3 { color: var(--primary); margin-bottom: 10px; }
+    </style>
 </head>
 <body>
-    <header>
+             <header>
         <nav class="navbar">
             <a href="#home" class="logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="sangini-logo.png" alt="Sangini Logo" style="height: 40px; width: 40px; object-fit: contain;">
+                <img src="sangini-logo.png" alt="Logo" style="height: 35px; width: 35px; object-fit: contain;">
                 Sangini<span>.</span>
             </a>
-            
             <ul class="nav-links">
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#services" onclick="toggleMenu()">What I Do</a></li>
                 <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
                 <li><a href="#education" onclick="toggleMenu()">Education</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
@@ -45,7 +53,7 @@
         </div>
         <div class="hero-right">
             <div class="hero-img-box">
-                <img src="photo.jpeg" alt="Sangini Karande" onerror="this.src='https://via.placeholder.com/350x350?text=Sangini'">
+                <img src="" alt="Sangini Karande" onerror="this.src='https://via.placeholder.com/350x350?text=Sangini'">
             </div>
         </div>
     </section>
@@ -54,8 +62,9 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-img-container">
+                
                 <div class="csr-badge">
-                    <i class="fas fa-star"></i> Aspiring SDE
+                    <i class="fas fa-star"></i> 
                 </div>
             </div>
             <div class="about-text">
@@ -77,6 +86,27 @@
         </div>
     </section>
 
+    <section id="services" style="background: var(--bg-light);">
+        <h2 class="section-title">What I Do</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <i class="fas fa-server"></i>
+                <h3>Backend Development</h3>
+                <p>Building secure and scalable server-side applications using Core Java, Servlets, and Object-Oriented Programming principles.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-database"></i>
+                <h3>Database Management</h3>
+                <p>Designing efficient relational databases, writing complex queries, and managing data flow with MySQL and JDBC.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Frontend Development</h3>
+                <p>Creating responsive, interactive, and modern web interfaces using HTML, CSS, JavaScript, and React.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
         <h2 class="section-title">Core Skills</h2>
         <div class="skills-grid">
@@ -86,8 +116,8 @@
             <div class="skill-card"><i class="fas fa-cubes"></i><h4>OOP Concepts</h4></div>
             <div class="skill-card"><i class="fas fa-brain"></i><h4>Problem Solving</h4></div>
             <div class="skill-card"><i class="fas fa-comments"></i><h4>Communication</h4></div>
-            <div class="skill-card"><i class="fas fa-code"></i><h4>Full Stack Dev</h4></div>
-            <div class="skill-card"><i class="fab fa-git-alt"></i><h4>Git & GitHub</h4></div>
+            <div class="skill-card"><i class="fas fa-bolt"></i><h4>Confidence</h4></div>
+            <div class="skill-card"><i class="fas fa-briefcase"></i><h4>Hardworking</h4></div>
         </div>
     </section>
 
@@ -125,10 +155,28 @@
                 </div>
             </div>
             <div class="project-card" onclick="openModal('project2-modal')">
-                <div class="project-img" style="background: linear-gradient(135deg, var(--secondary), #5aa835);"><i class="fas fa-gas-pump"></i></div>
+                <div class="project-img" style="background: var(--secondary); color: var(--primary);"><i class="fas fa-gas-pump"></i></div>
                 <div class="project-info">
                     <h3>Petrol Pump Management</h3>
                     <p>Android app developed during internship at Avirat Infotech to track sales and expenses.</p>
+                    <span class="read-more">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            
+            <div class="project-card" onclick="openModal('project3-modal')">
+                <div class="project-img" style="background: #e67e22; color: white;"><i class="fas fa-users-cog"></i></div>
+                <div class="project-info">
+                    <h3>Employee Management DB</h3>
+                    <p>Java-based system with full CRUD operations for fetching and updating employee records.</p>
+                    <span class="read-more">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            
+            <div class="project-card" onclick="openModal('project4-modal')">
+                <div class="project-img" style="background: #9b59b6; color: white;"><i class="fas fa-laptop-code"></i></div>
+                <div class="project-info">
+                    <h3>Developer Portfolio</h3>
+                    <p>Fully responsive, modern web portfolio featuring a custom AI assistant integration.</p>
                     <span class="read-more">View Details <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
@@ -140,7 +188,7 @@
             <span class="close-btn" onclick="closeModal('project1-modal')">&times;</span>
             <h2>Smart Irrigation System</h2>
             <div class="tag-container"><span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Android App</span></div>
-            <p>This system enables remote watering via an Android app, reducing water wastage by monitoring soil moisture levels in real-time.</p>
+            <p>This system enables remote watering via an Android app, reducing water wastage.</p>
             <a href="https://github.com/sanginikarande22" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View on Github</a>
         </div>
     </div>
@@ -150,24 +198,77 @@
             <span class="close-btn" onclick="closeModal('project2-modal')">&times;</span>
             <h2>Petrol Pump Management App</h2>
             <div class="tag-container"><span class="tag">Android Studio</span><span class="tag">Java</span><span class="tag">SQLite</span></div>
-            <p>App tracks sales, purchases, expenses, and employee records with efficient database design to help pump owners manage their daily operations.</p>
+            <p>App tracks sales, purchases, expenses, and employee records with efficient database design.</p>
+            <a href="https://github.com/sanginikarande22" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View on Github</a>
+        </div>
+    </div>
+
+    <div id="project3-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project3-modal')">&times;</span>
+            <h2>Employee Management Database</h2>
+            <div class="tag-container"><span class="tag">Core Java</span><span class="tag">MySQL</span><span class="tag">JDBC</span></div>
+            <p>A robust backend architecture that demonstrates proficiency in Object-Oriented Programming and database connectivity. The system allows administrators to seamlessly insert, update, delete, and fetch staff records securely.</p>
+            <a href="https://github.com/sanginikarande22" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View on Github</a>
+        </div>
+    </div>
+
+    <div id="project4-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project4-modal')">&times;</span>
+            <h2>Personal Developer Portfolio</h2>
+            <div class="tag-container"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">UI/UX</span></div>
+            <p>The website you are currently viewing! Designed with a mobile-first approach, featuring CSS glassmorphism, fluid grid layouts, and dynamic JavaScript components.</p>
             <a href="https://github.com/sanginikarande22" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View on Github</a>
         </div>
     </div>
 
     <section id="achievements">
-        <h2 class="section-title">Achievements & Certificates</h2>
-        <div class="achievements-gallery">
-            <div class="achieve-card">
-                <img src="Certificate data science .pdf.jpg" alt="Data Science Certificate" onerror="this.src='https://via.placeholder.com/300x200?text=Certificate'">
-                <h3>Data Science Certificate</h3>
+    <h2 class="section-title">Achievements & Certificates</h2>
+    <div class="achievements-gallery">
+        <div class="achieve-card">
+            <div class="achieve-img-box">
+                <img src="Certificate data science .pdf.jpg" alt="Data Science Certificate" onerror="this.src='https://via.placeholder.com/400x300?text=Data+Science+Cert'">
             </div>
-            <div class="achieve-card">
-                <img src="certificate.png" alt="General Certificate" onerror="this.src='https://via.placeholder.com/300x200?text=Certificate'">
-                <h3>Technical Certification</h3>
+            <div class="achieve-info">
+                <h3>Data Science Certificate</h3>
+                <button class="btn btn-sm btn-outline" onclick="openCertificateModal('Certificate data science .pdf.jpg')">View <i class="fas fa-eye"></i></button>
             </div>
         </div>
-    </section>
+        <div class="achieve-card">
+            <div class="achieve-img-box">
+                <img src="certificate.png" alt="Technical Certification" onerror="this.src='https://via.placeholder.com/400x300?text=Technical+Cert'">
+            </div>
+            <div class="achieve-info">
+                <h3>Technical Certification</h3>
+                <button class="btn btn-sm btn-outline" onclick="openCertificateModal('certificate.png')">View <i class="fas fa-eye"></i></button>
+            </div>
+        </div>
+        <div class="achieve-card">
+            <div class="achieve-img-box">
+                <img src="https://via.placeholder.com/400x300?text=Java+Course" alt="Java Course">
+            </div>
+            <div class="achieve-info">
+                <h3>Java Programming Course</h3>
+                <button class="btn btn-sm btn-outline" onclick="openCertificateModal('https://via.placeholder.com/800x600?text=Full+Java+Certificate')">View <i class="fas fa-eye"></i></button>
+            </div>
+        </div>
+        <div class="achieve-card">
+            <div class="achieve-img-box">
+                <img src="https://via.placeholder.com/400x300?text=Web+Dev+Bootcamp" alt="Web Dev Bootcamp">
+            </div>
+            <div class="achieve-info">
+                <h3>Full Stack Bootcamp</h3>
+                <button class="btn btn-sm btn-outline" onclick="openCertificateModal('https://via.placeholder.com/800x600?text=Full+Web+Dev+Certificate')">View <i class="fas fa-eye"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="certificate-modal" class="modal" onclick="closeCertificateModal(event)">
+    <span class="close-btn" onclick="closeModal('certificate-modal')">&times;</span>
+    <img id="certificate-modal-img" src="" alt="Full Size Certificate">
+</div>
 
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
@@ -179,6 +280,10 @@
                 <div class="info-item"><i class="fas fa-phone-alt"></i><div><h4>Phone</h4><p><a href="tel:+919356298482">+91 9356298482</a></p></div></div>
                 <div class="info-item"><i class="fab fa-github"></i><div><h4>GitHub</h4><p><a href="https://github.com/sanginikarande22" target="_blank">sanginikarande22</a></p></div></div>
                 <div class="info-item"><i class="fab fa-linkedin-in"></i><div><h4>LinkedIn</h4><p><a href="https://linkedin.com/in/sangini-karande-72aa1b2a1" target="_blank">Sangini Karande</a></p></div></div>
+                <div class="contact-buttons">
+                    <a href="mailto:sanginikarande@gmail.com" class="btn btn-primary">Send Email</a>
+                    <a href="Sangini_Resume.pdf" download class="btn btn-outline">Download Resume</a>
+                </div>
             </div>
 
             <div class="contact-form-box">
@@ -186,7 +291,7 @@
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
                     <div class="textarea-container">
-                        <textarea id="contact-message" placeholder="Type a few words..." rows="5" required></textarea>
+                        <textarea id="contact-message" placeholder="Type a few words (e.g., 'hire you for dev role')" rows="5" required></textarea>
                         <button type="button" id="ai-draft-btn" class="ai-draft-btn" onclick="draftMessageAI()">✨ AI Draft</button>
                     </div>
                     <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
